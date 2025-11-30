@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Ropa - Catálogo</title>
+</head>
+<body>
+<h1>Catálogo de productos</h1>
+
+<p>Total productos (vista): <span th:text="${productos.size()}">0</span></p>
+
+<div th:if="${#lists.isEmpty(productos)}">
+    <p>No hay productos registrados.</p>
+</div>
+
+<div th:if="${!#lists.isEmpty(productos)}">
+    <div th:each="producto : ${productos}">
+        <h3 th:text="${producto.nombre}">Nombre</h3>
+        <p th:text="${producto.descripcion}">Descripción</p>
+    </div>
+</div>
+
+<div>
+    <div >
+        <h3 >Nombre t</h3>
+        <p >Descripción t</p>
+    </div>
+</div>
+</body>
+</html>
